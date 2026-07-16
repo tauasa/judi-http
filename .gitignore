@@ -1,0 +1,9 @@
+.bloop
+.vscode
+target/
+.DS_Store
+.classpath
+.project
+.settings/
+.metals/
+.claude

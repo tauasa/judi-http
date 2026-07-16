@@ -1,0 +1,32 @@
+# judi-http server configuration
+# Install at: /etc/judi-http/config/server.yml
+# Every key is optional; built-in defaults are shown below.
+
+server:
+  host: 0.0.0.0
+  port: 8080
+  documentRoot: /etc/judi-http/www
+  name: judi-http/1.0
+
+http:
+  # Files tried, in order, when a directory is requested
+  indexFiles:
+    - index.html
+    - index.htm
+
+  # Maximum size of the request line + headers, in bytes
+  maxRequestBytes: 16384
+
+  # Connections idle longer than this are closed
+  idleTimeoutSeconds: 30
+
+  # Honor HTTP/1.1 persistent connections
+  keepAlive: true
+
+  # Custom error pages, keyed by HTTP status code and resolved against
+  # documentRoot the same way normal requests are. Falls back to a built-in
+  # page when a status has no entry here, or the file is missing/unreadable.
+  errorPages:
+    400: /40x.html
+    404: /40x.html
+    500: /50x.html
